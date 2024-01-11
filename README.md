@@ -21,8 +21,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="200" height="80">
+  <a href="https://github.com/Juls95/atletz_allo_arb">
+    <img src="src/app/assets/atletz.svg" alt="Logo" width="200" height="80">
   </a>
 
 <h3 align="center">Atletz</h3>
@@ -30,14 +30,14 @@
   <p align="center">
     Empower talent, share triumphs
     <br />
-    <a href="https://github.com/Juls95/atletz_app"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Juls95/atletz_allo_arb"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://julian.com.mx/">View Demo</a>
+    <a href="https://atletz.io/">View Demo</a>
     ·
-    <a href="https://github.com/Juls95/atletz_app/issues">Report Bug</a>
+    <a href="https://github.com/Juls95/atletz_allo_arb/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Juls95/atletz_app/issues">Request Feature</a>
+    <a href="https://github.com/Juls95/atletz_allo_arb/issues">Request Feature</a>
   </p>
 </div>
 
@@ -72,7 +72,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Why ATLETZ?
 
-[![Product Name Screen Shot][product-screenshot]](https://julian.com.mx)
+[![Product Name Screen Shot][product-screenshot]](https://atletz.io)
 
 The human being is a social being; he likes to belong to and feel identified with a community. Regarding **Atletz**, we are the company that will combine Blockchain technology, AI, and Sports by allowing followers of a particular discipline to have access and opportunity to invest in athletes who will be recommended by an AI system based on people's information and interactions as well as the quality of the athlete (reputation, commitment, transparency...). 
 
@@ -88,6 +88,7 @@ This will allow followers to be part of the growth of an athlete who will be abl
 * Next.js
 * React.js
 * Node.js
+* allo
 * Bun
 * Web3
 * hardhat
@@ -108,50 +109,53 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Juls95/atletz_app.git
+   git clone https://github.com/Juls95/atletz_allo_arb
    ```
-2. Install NPM packages
+2. Install BUN packages
    ```sh
-   npm install
+   bun install
    ```
 3. Create a .env file in the root folder and add the following parameters:
    ```js
-   private_key = 'ENTER YOUR PRIVATE KEY';
-   UP_ADDR = 'ENTER YOUR UNIVERSAL PROFILE ADDRESS';
+   NEXT_PUBLIC_PINATA_JWT = 'ENTER YOUR JWT FROM PINATA';
+   NEXT_PUBLIC_IPFS_READ_GATEWAY = 'ENTER YOUR IPFS GATEWAY';
+   NEXT_PUBLIC_IPFS_WRITE_GATEWAY = "ENTER PUBLIC IPFS SERVICE GATEWAY ADDRESS";
+   PROJECT_ID= "ENTER YOUR ID FROM RAINBOW WALLET";
+   NEXT_PUBLIC_GRAPHQL_URL = "ENTER PUBLIC URL FROM GRAPHQL"
    ```
-4. Navigate to Functionaly Site folder and execute the following:
+4. Execute the following:
    ```js
-   node app.js
+   BUN DEV
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤯 Challenges we ran into
-* **Big problem**: Deploying ERC725 and LSPFactory locally and in the cloud. It's still a problem, that's why a nig part of the code is commented because of the following error: ''BREAKING CHANGE: webpack < 5 used to include polyfills for node.js core modules by default. This is no longer the case. ''
-* Very **hard to integrate the front with the Backend**. Many problems when reading the data the user entered. That's why we created every element individually (NFT contract en Profile update) and we left the code in here but without connection to the front. You can visit following links to see the successful deployment of LSP8, :
-    - https://explorer.execution.testnet.lukso.network/address/0xcd56721954edEa42cDe615479b44A91F89858d14
-    - https://explorer.execution.testnet.lukso.network/tx/0xc7e3732c4165c97029f86029fa464bc1043fae430197021c1f464a2d0eddaddb?tab=internal
-* **Documentation is not updated**. When following tutorials from Docs Lukso several error were appearing causing waste of time trying to solve them. Fortunately, most of the time the community people help with this (after lot of time because of Timezone difference with Mexico)
-* **Time management**. As mentioned before, the problem with documentation, with UP integration and Frontend integration caused ton of time wasted on this.
+* **Big problem**: Trabajar con la creacion de spec para crear el JSON y conectar esa base de datos con allo fue complicado y al perder tiempo en otros problemas no sepudo tener acceso a la version beta de esto lo cual impidio la implementación correcta. ''
+* Very **hard to integrate the front with the Backend**. Many problems when reading the data from multiple functions of the ALLO-V2-SPEC. Errors appeared when we called the information so we did it in a manual way for now due to time. Here you can see images of what we achieved:
+    - https://harlequin-gigantic-bird-154.mypinata.cloud/ipfs/QmRKwTKYMxz7ZTCSWBAdU2tG2bvxBeX7PPrCZpoi7rbZAX?pinataGatewayToken=Hq-GhBZ-v7o6Z-6QmYFoJSMrAiNleHTdAj-va55o_jKyD9QlCG6Hofn2EtNMJCwA&_gl=1*161y1ie*_ga*MjEwNDk0NzgwNS4xNzA0OTE3Mjc3*_ga_5RMPXG14TE*MTcwNDk0OTEwMi44LjEuMTcwNDk0OTE1OS4zLjAuMA..
+    - https://harlequin-gigantic-bird-154.mypinata.cloud/ipfs/QmRuGsZ896Ep2puuD93v3boFbmy8HoKGEMDF63CYaz5nyt?pinataGatewayToken=Hq-GhBZ-v7o6Z-6QmYFoJSMrAiNleHTdAj-va55o_jKyD9QlCG6Hofn2EtNMJCwA&_gl=1*8ge778*_ga*MjEwNDk0NzgwNS4xNzA0OTE3Mjc3*_ga_5RMPXG14TE*MTcwNDk0OTEwMi44LjEuMTcwNDk0OTE2My42MC4wLjA.
+    - https://harlequin-gigantic-bird-154.mypinata.cloud/ipfs/QmVkUnCasytZpXVm6cwEX87xR1cB2HEC63y8FJAQchmEfc?pinataGatewayToken=Hq-GhBZ-v7o6Z-6QmYFoJSMrAiNleHTdAj-va55o_jKyD9QlCG6Hofn2EtNMJCwA&_gl=1*1h34ove*_ga*MjEwNDk0NzgwNS4xNzA0OTE3Mjc3*_ga_5RMPXG14TE*MTcwNDk0OTEwMi44LjEuMTcwNDk0OTE2NC41OS4wLjA.
+* **Limited workshops**. I would love to have more workshops related to integrations and explanation of the features. Fortunately, most of the time the community people help with this (after lot of time because of Timezone difference with Mexico)
+* **Time management**. As mentioned before, the problem with workshops, we lost a lot of time finding the correct solution to our problem
 
 <!-- ROADMAP -->
 ## Roadmap
 
 - [x] Create prototype of Atletz
-- [x] Test blockchain to build on
-- [x] Create contracts for NFT usinf LSP4 and LSP8
-- [x] Connect with UP instead Metamask
-- [x] Update wallet profile using Lukso LSP3
-- [ ] Solve UP integration
+- [x] Test cards and basic functionalities
+- [x] Create prototype of the project
+- [x] Create the branding for Atletz
+- [ ] Solve Spect integration
 - [ ] Connecct Frontend and Backend
-- [ ] Test on testnet
-    - [ ] Create athletes profiles
-    - [ ] Create fans profiles
-    - [ ] Create investment opportunitied
+- [ ] Test on allo protocol
+    - [ ] Create multiple pools
+    - [ ] Allow fans to review and vote
+    - [ ] Create investment opportunities
 - [ ] Move to Mainnet and bring Athletes and Fans to the project
 
 
-See the [open issues](https://github.com/Juls95/atletz_app/issues/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Juls95/atletz_allo_arb/issues/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -189,7 +193,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Julián Ramírez - [@julsr_mx](https://twitter.com/julsr_mx) - juramirez.ve@gmail.com
 
-Project Link: [https://github.com/Juls95/atletz_app](https://github.com/Juls95/atletz_app)
+Project Link: [https://github.com/Juls95/atletz_allo_arb](https://github.com/Juls95/atletz_allo_arb)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
